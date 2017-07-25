@@ -1,0 +1,44 @@
+package application;
+	
+import javafx.application.Application;
+import javafx.application.ConditionalFeature;
+import javafx.application.Platform;
+import javafx.stage.Stage;
+import javafx.scene.Group;
+import javafx.scene.Scene;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.paint.Color;
+import javafx.scene.paint.PhongMaterial;
+import javafx.scene.shape.Cylinder;
+
+
+public class Main extends Application {
+	@Override
+	public void start(Stage primaryStage) {
+		if (!Platform.isSupported(ConditionalFeature.SCENE3D)) {
+			throw new RuntimeException("*** ERROR£ºcommon conditional SCENE3D is not supported");
+		}
+		
+		primaryStage.setTitle("JavaFX MSAA demo");
+		
+		Group root =  new Group();
+		Scene scene = new Scene(root,1000,800);
+		scene.setFill(Color.color(0.2, 0.2, 0.2,1.0));
+		
+		HBox hBox = new HBox();
+		hBox.setLayoutX(75);
+		hBox.setLayoutY(200);
+		
+		PhongMaterial phongMaterial = new PhongMaterial(Color.color(1.0, 0.7, 0.8));
+		Cylinder cylinder = new Cylinder(100,200);
+		cylinder.setMaterial(phongMaterial);
+		
+		primaryStage.setScene(scene);
+		primaryStage.show();
+	}
+	
+	public static void main(String[] args) {
+		launch(args);
+	}
+}
