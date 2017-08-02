@@ -48,9 +48,9 @@ public class ButtonSample extends Application{
 		Button button5 = new Button();
 		button5.setGraphic(new ImageView(imageDecline));
 		
-		button2.setOnAction((ActionEvent e)-> {
-			label.setText("Accepted");
-		});
+//		button2.setOnAction((ActionEvent e)-> {
+//			label.setText("Accepted");
+//		});
 		
 	}
 

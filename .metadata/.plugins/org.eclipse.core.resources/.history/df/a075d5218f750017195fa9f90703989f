@@ -1,0 +1,39 @@
+package application;
+
+import javafx.application.Application;
+import javafx.scene.Group;
+import javafx.scene.Scene;
+import javafx.scene.control.ToggleButton;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+
+public class ToggleButtonSample extends Application {
+//	//一个不带任何文本或图标的Toggle Button
+//	ToggleButton tb1 = new ToggleButton();
+//	//一个带有文本的Toggle Button
+//	ToggleButton tb2 = new ToggleButton("Press me");
+//	//一个带有文本和图标的Toggle Button
+//	Image image = new Image(getClass().getResourceAsStream("icon.png"));
+//	ToggleButton tb3 = new ToggleButton("Press me",new ImageView(image));
+
+	public static void main(String[] args) {
+		launch(args);
+	}
+	@Override
+	public void start(Stage stage) throws Exception {
+		stage.setTitle("Toggle Button Sample");
+		stage.setWidth(250);
+		stage.setHeight(180);
+		
+		HBox hBox = new HBox();
+		VBox vBox = new VBox();
+		
+		Scene scene = new Scene(new Group(vBox));
+		stage.setScene(scene);
+		scene.getStylesheets().add("application/ControlStyle.css");
+	}
+
+}
